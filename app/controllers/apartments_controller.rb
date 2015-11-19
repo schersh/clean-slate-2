@@ -32,11 +32,12 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.find(params[:id])
     @roommates = @apartment.users
     user = current_user
-    if @apartment.expenses
+    @roommate_sums = []
+    unless @apartment.expenses.empty?
       @expenses = current_user.expenses
       @roommate_sums = roommate_sums
       @grand_total = get_total
-    end 
+    end
   end
 
   def edit
@@ -59,22 +60,24 @@ class ApartmentsController < ApplicationController
   end
 
   def get_total
-    # TODO handle no expenses case
-    @apartment.expenses
-      .map {|expense| expense.amount}
-      .reduce(:+)
+    @apartment = Apartment.find(params[:id])
+    unless @apartment.expenses.empty?
+      @apartment.expenses.map {|expense| expense.amount}.reduce(:+)
+    end
   end
 
   def roommate_sums
-    users = @apartment.users
-    apartment_total = get_total
-    apartment_average = apartment_total / users.length
-    roommate_sums = []
-    users.each do |user|
-      # TODO handle no expenses case
-      total = user.expenses.map {|expense| expense.amount}.reduce(:+)
-      balance = apartment_average - total
-      roommate_sums << {:total => total, :balance => balance, :user => user}
+    @apartment = Apartment.find(params[:id])
+    unless @apartment.expenses.empty?
+      users = @apartment.users
+      apartment_total = get_total
+      apartment_average = (apartment_total / users.length)
+      roommate_sums = []
+      users.each do |user|
+        total = user.expenses.map {|expense| expense.amount}.reduce(:+)
+        balance = apartment_average - total
+        roommate_sums << {:total => total, :balance => balance, :user => user}
+      end
     end
     return roommate_sums
   end
