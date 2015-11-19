@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CleanSlate</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:700|Architects+Daughter|Gudea' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class='header'>
+  <%= image_tag("couch.jpg", class: "cover") %>
+</div>
+<h1>Clean Slate</h1>
+<h2 class='subtitle'>Get even with your roommates and live happily ever after.</h2>
+<h2 class='subtitle'> An app for settling your accounts.</h2>
+<nav>
+  <div class="user-info login">
+    <p>Welcome to Clean Slate:
+     <% if current_user %>
+       You are logged in as <%= current_user.first_name %>
+    </p>
+       <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
+     <% else %>
+       <%= link_to 'Signup', new_user_registration_path %>
+       <%= link_to 'Login', new_user_session_path %>
+     <% end %>
+  </div>
+</nav>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</body>
+<footer>
+  <nav>
+    <p class='foot'>Clean Slate: Preventing Roommate Squabbles since 2015</p>
+</footer>
+</html>

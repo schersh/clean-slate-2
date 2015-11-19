@@ -1,0 +1,6 @@
+<p class="subtitle">Invite a roommate by entering the email address they used when signing up for an account on Clean Slate: </p>
+<form action="/invite_roommate" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type= "text" name= "email" >
+  <input type= "submit">
+</form>

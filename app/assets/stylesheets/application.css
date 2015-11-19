@@ -1,0 +1,125 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ * {
+   box-sizing: border-box;
+   justify-content: center;
+   text-decoration: none;
+ }
+ body {
+   font-family: sans-serif;
+   text-align: center;
+   color: black;
+   background: rgba(206, 184, 167, 0.4);
+   padding-bottom: 50px;
+}
+.cover {
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: auto;
+  overflow-y: auto;
+  left: 0;
+  right: 0;
+  position: static;
+  opacity: .90
+}
+.flash {
+  text-align: center;
+  padding: 50px;
+  margin: 20px;
+  font-size: 28px;
+}
+.image {
+  align-self: center;
+  padding: 1px;
+  margin: 15px auto;
+  width: 600px;
+  border: 3px solid #7A7A7A;
+}
+
+nav {
+  color: #FFFFFF;
+  background: #735358;
+  font-size: 22px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+h1 {
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  left: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 44px;
+  color: #735358
+}
+p.foot {
+  font-family: 'Gudea', sans-serif;
+  font-size: 16px;
+}
+p {
+   font-family: 'Gudea', sans-serif;
+ }
+.subtitle {
+  font-family: 'Architects Daughter', cursive;
+}
+a:link { /* Essentially means a[href], or that the link actually goes somewhere */
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: sienna;
+}
+a:active {
+  color: blue;
+}
+.user-action{
+  display: block;
+  font-size: 8px;
+  font-family: 'Gudea', sans-serif;
+}
+.login a{
+  background-color: #D0D0D3;
+  padding: 5px 10px 5px 10px;
+  margin-left: 5px;
+  text-decoration: none;
+}
+footer {
+  padding-top: 50px;
+}
+.expenses {
+  text-align: center;
+}
+table.center {
+  margin-left:auto;
+  margin-right:auto;
+  padding-bottom: 20px;
+}
+th {
+  padding: 15px;
+}
+button {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 18px;
+  padding: 7px;
+}

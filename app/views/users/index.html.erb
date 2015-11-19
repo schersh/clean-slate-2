@@ -1,0 +1,9 @@
+<h1><%= "#{@user}" %></h1>
+
+<h2 class="subtitle"><%= @apartment.name %> has invited you to join their account on Clean Slate.</h2>
+<h2 class="subtitle">Would you like to join?</h2>
+
+
+<button><%= link_to "Accept Invitation", apartment_path(@apartment) %></button>
+
+<button><%= link_to "Decline Invitation", new_apartment_path %></button>

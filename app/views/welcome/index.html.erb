@@ -1,0 +1,13 @@
+<% if current_user.temp_id %>
+  <h2><%= link_to "Confirm Profile Information", users_path(current_user) %></h2>
+
+<% elsif current_user %>
+  <h2><%= link_to "Create Your Apartment", new_apartment_path %></h2>
+
+<% else %>
+
+  <%= link to "Sign in or Create an Account", new_user_session_path %>
+
+<% end %>
+
+<%= image_tag("cup.jpg", class: "image") %>

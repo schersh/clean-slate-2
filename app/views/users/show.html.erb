@@ -1,0 +1,13 @@
+<h1><%= "#{@user}" %></h1>
+
+<h2 class="subtitle"><%= "#{@apartment}" %> has invited you to join their account on Clean Slate.</h2>
+<h2 class="subtitle">Would you like to join?</h2>
+
+
+<button>
+  <%= button_to "Accept Invitation", accept_invite_path, method: :patch %>
+</button>
+
+<button>
+  <%= button_to "Decline Invitation", decline_invite_path, method: :path %>
+</button>
