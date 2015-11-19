@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     user.temp_id = current_user.apartment_id
     user.save
-    @apartment = current_user.temp_id
+    @apartment = current_user.apartment_id
     redirect_to apartment_path(@apartment), notice: "You have successfully invited this roommate. Your roommate must log-in to accept or decline your invitation."
   end
 
