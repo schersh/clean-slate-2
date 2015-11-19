@@ -45,6 +45,7 @@ class ApartmentsController < ApplicationController
     @roommates = @apartment.users
   end
 
+# fixed tpyo - "update" to "updated"
   def update
     @user = current_user
     @apartment.update(apartment_params)
@@ -65,7 +66,8 @@ class ApartmentsController < ApplicationController
       @apartment.expenses.map {|expense| expense.amount}.reduce(:+)
     end
   end
-
+  
+# this also seems like something you could include in apartment model as a method
   def roommate_sums
     @apartment = Apartment.find(params[:id])
     unless @apartment.expenses.empty?
