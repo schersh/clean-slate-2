@@ -40,6 +40,7 @@ class UsersController < ApplicationController
 
   def accept_invite
     current_user.apartment_id = current_user.temp_id
+    current_user.save
     current_user.temp_id = nil
     current_user.save
     redirect_to apartment_path(current_user.apartment), notice: "You have successfully joined as a roommated!"

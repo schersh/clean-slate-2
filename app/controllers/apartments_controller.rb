@@ -82,6 +82,8 @@ class ApartmentsController < ApplicationController
     return roommate_sums
   end
 
+
+
   private
     def apartment_params
       params.require(:apartment).permit(:name)
