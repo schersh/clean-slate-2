@@ -29,7 +29,7 @@
       <tbody>
         <% roommate.expenses.each do |expense| %>
         <tr>
-          <td><%= expense.created_at %></td>
+          <td><%= expense.created_at.strftime("%m/%d/%y") %></td>
           <td><%= expense.description %></td>
           <td><%= expense.amount %></td>
           <td><%= expense.user.first_name %></td>
