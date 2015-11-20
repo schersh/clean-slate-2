@@ -33,7 +33,7 @@ class ApartmentsController < ApplicationController
     @roommates = @apartment.users
     user = current_user
     @roommate_sums = []
-    unless @apartment.expenses.empty?
+    unless @apartment.expenses.nil?
       @expenses = current_user.expenses
       @roommate_sums = roommate_sums
       @grand_total = get_total
@@ -61,14 +61,14 @@ class ApartmentsController < ApplicationController
 
   def get_total
     @apartment = Apartment.find(params[:id])
-    unless @apartment.expenses.empty?
+    unless @apartment.expenses.nil?
       @apartment.expenses.map {|expense| expense.amount}.reduce(:+)
     end
   end
 
   def roommate_sums
     @apartment = Apartment.find(params[:id])
-    unless @apartment.expenses.empty?
+    unless @apartment.expenses.nil?
       users = @apartment.users
       apartment_total = get_total
       apartment_average = (apartment_total / users.length)
