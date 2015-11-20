@@ -65,7 +65,9 @@
   </tr>
 </table>
 
-<button>All Paid up? Click Here for a Clean Slate</button>
+<button>
+  <%= link_to "All Paid up? Click Here for a Clean Slate", clean_slate_path, method: :delete %>
+</button>
 
 <div class ="center">
 <%= image_tag("bills.jpg", class: "image") %>

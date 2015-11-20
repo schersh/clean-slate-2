@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     current_user.save
     current_user.temp_id = nil
     current_user.save
-    redirect_to apartment_path(current_user.apartment), notice: "You have successfully joined as a roommated!"
+    redirect_to apartment_path(current_user.apartment), notice: "You have successfully joined as a roommate!"
   end
 
   def decline_invite

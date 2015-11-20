@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   patch '/accept_invite' => 'users#accept_invite'
   post '/decline_invite' => 'users#decline_invite'
 
+  delete '/clean_slate' =>'apartments#clean_slate'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

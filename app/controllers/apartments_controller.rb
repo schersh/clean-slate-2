@@ -82,7 +82,14 @@ class ApartmentsController < ApplicationController
     return roommate_sums
   end
 
-
+  def clean_slate
+   @apartment = current_user.apartment
+   expenses = @apartment.expenses
+   expenses.each do |expense|
+     expense.delete
+   end
+   redirect_to apartment_path(@apartment)
+  end
 
   private
     def apartment_params
