@@ -25,6 +25,7 @@
    background: rgba(206, 184, 167, 0.4);
    padding-bottom: 50px;
 }
+
 .cover {
   max-width: 100%;
   padding: 0;
@@ -110,10 +111,19 @@ footer {
 .expenses {
   text-align: center;
 }
+thead {
+  color: #FFFFFF;
+  background: #735358;
+}
+tfoot {
+  color: #FFFFFF;
+  background: #735358;
+}
 table.center {
   margin-left:auto;
   margin-right:auto;
-  padding-bottom: 20px;
+  background-color: #D0D0D3;
+  border: black;
 }
 th {
   padding: 15px;
@@ -122,4 +132,5 @@ button {
   font-family: 'Architects Daughter', cursive;
   font-size: 18px;
   padding: 7px;
+  margin: 15px;
 }
