@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
   def index
     @expenses = current_user.expenses
-    @apartment = current_user.apartment
+    apartment_id = current_user.temp_id
+    @apartment = Apartment.find_by(apartment_id params[:id])
   end
 
   def new

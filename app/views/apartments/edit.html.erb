@@ -1,6 +1,6 @@
 <h2>Update Apartment</h2>
 
-<%= form_for ([@apartment]) do |f| %>
+<%= form_for ([current_user.apartment]) do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>

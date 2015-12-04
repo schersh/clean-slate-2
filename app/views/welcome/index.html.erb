@@ -1,3 +1,11 @@
+
+<div class='header'>
+  <%= image_tag("couch.jpg", class: "cover") %>
+</div>
+<h1>Clean Slate</h1>
+<h2 class='subtitle'>Get even with your roommates and live happily ever after.</h2>
+<h2 class='subtitle'> An app for settling your accounts.</h2>
+
 <% if current_user.temp_id %>
   <h2><%= link_to "Confirm Profile Information", users_path(current_user) %></h2>
 
