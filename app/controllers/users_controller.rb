@@ -33,10 +33,14 @@ class UsersController < ApplicationController
 
   def invite_roommate
     user = User.find_by(email: params[:email])
-    user.temp_id = current_user.apartment_id
-    user.save
     @apartment = current_user.apartment_id
-    redirect_to apartment_path(@apartment), notice: "You have successfully invited this roommate. Your roommate must log-in to accept or decline your invitation."
+    if user
+      user.temp_id = current_user.apartment_id
+      user.save
+      redirect_to apartment_path(@apartment), notice: "You have successfully invited this roommate. Your roommate must log-in to accept or decline your invitation."
+    else
+      redirect_to apartment_path(@apartment), notice: "This email address was not found. Please ask your roommate to create an account on Clean Slate before you request to add them as a roommate."
+    end
   end
 
   def accept_invite
